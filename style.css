@@ -1,0 +1,243 @@
+* {
+	display: block;
+}
+
+
+:root {
+  font-size: clamp(16px, calc(1rem + ((1vw - 3.6px) * 0.9524)), 24px);
+  min-height: 0vw;
+}
+
+body {
+ padding: 20px;
+ font-family: "PT Sans", sans-serif;
+}
+
+h1 {
+	margin: 0;
+	margin-bottom: 0.125em;
+	
+  font-weight: 700;
+  font-style: normal;
+
+  font-size: 3em;
+
+  @media (max-width: 410px) {
+  	font-size: 2.5em;
+  }
+}
+
+.aboutMe {
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+
+p, a {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  margin: 0;
+  margin-bottom: 1em;
+  max-width: 70%;
+  line-height: 1.3em;
+}
+
+.aboutMe > p:last-child {
+	margin-bottom: 0;
+}
+
+.description {
+	display: flex;
+	gap: 2em;
+
+	@media (max-width: 720px) {
+		flex-direction: column-reverse;
+		gap: 1em;
+	}
+}
+.description .descriptionTxt {
+	flex: 2;
+}
+
+.description .descriptionImg {
+	flex: 1;
+}
+
+.descriptionTxt p {
+	max-width: 100%;
+}
+
+img {
+	max-width: 100%;
+	border-radius: 0.25em;
+}
+
+.descrLinks {
+	display: flex;
+	gap: 1em;
+}
+
+a {
+	color: rgba(13, 146, 244);
+	text-decoration-thickness: 1.5px;
+	text-underline-offset: 6px;
+	text-decoration-color:rgba(13, 146, 244, 0.4);
+	transition: color 0.4s ease-in-out, text-decoration-color 0.4s ease-in-out;
+}
+	
+
+a:hover {
+	color: rgb(249, 84, 84);
+	text-decoration-color:rgba(249, 84, 84, 0.4);
+	transition: color 0s, text-decoration-color 0s;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 200px 200px;
+  gap: 20px;
+}
+
+.cl {
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.one {
+  grid-row-start: 1;
+  grid-row-end: 3;  
+}
+
+.gapXL {
+	height: 3.5em;
+}
+
+.gapM {
+	height: 1em;
+}
+
+.myWorks {
+	display: grid;
+	grid-template-columns: repeat(6, minmax(50px, 200px));
+	grid-template-rows: 2fr min-content;
+	row-gap: 1em;
+}
+
+.myWorks img:nth-child(1) {
+	display: block;
+	grid-column-start: 1;
+	grid-column-end: 6;
+	border: 1px solid #ddd;
+}
+
+.myWorks p {
+	padding-left: 1em;
+	max-width: 100%;
+	font-size: 0.65em;
+}
+
+.imgWithCaption {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+}
+
+.imgWithCaption p {
+	padding-left: 0;
+}
+
+
+.myWorks .imgWithCaption:nth-of-type(1) {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	padding-right: 1em;
+}
+
+.myWorks .imgWithCaption:nth-of-type(2) {
+	grid-column-start: 3;
+	grid-column-end: 5;
+	padding-right: 1em;
+}
+
+.myWorks .imgWithCaption:nth-of-type(3) {
+	grid-column-start: 5;
+	grid-column-end: 7;
+	padding-right: 1em;
+}
+
+.myWorks .imgWithCaption img {
+	aspect-ratio: 1 / 1;
+}
+
+.myWorks img:nth-of-type(1) {
+	grid-column-start: 1;
+	grid-column-end: 6;
+}
+
+
+.myWorks .imgWithCaption:nth-child(1) p {
+	max-width: 70%;
+	font-size: 1.3em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .8em;
+}
+
+/* Особым псевдоклассом перекрасим плейсхолдеры */
+::placeholder {
+  color: #ddd;
+}
+
+
+input,
+button, textarea{
+  font-size: 1.3em;
+  border-radius: 8px;
+}
+
+input, textarea {
+  padding: 0.3em;
+  border: 2px solid #ddd;
+}
+
+button {
+  padding: 0.3em 1.15em;
+
+  border: none;
+  background: #ff5722;
+  color: #fff;
+}
+
+textarea {
+  min-width: 480px;
+  max-width: 100%;
+
+  min-height: 150px;
+  max-height: 250px;
+}
+
+
+img:hover { 
+	 filter: hue-rotate(0deg);
+   animation: hueChange 5s infinite linear;
+}
+
+@keyframes hueChange {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+
